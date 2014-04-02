@@ -115,7 +115,7 @@ pub unsafe fn draw_char(c: char)
     {
 	while i < CURSOR_WIDTH
 	{
-	    //let addr = START_ADDR + 4*(CURSOR_X + CURSOR_WIDTH - i + SCREEN_WIDTH*(CURSOR_Y + j));
+	    //addr = START_ADDR + 4*(CURSOR_X + CURSOR_WIDTH - i + SCREEN_WIDTH*(CURSOR_Y + j));
 	    //let addr = START_ADDR + 4*(CURSOR_X + CURSOR_WIDTH + SCREEN_WIDTH*CURSOR_Y) - 4*i + 4*SCREEN_WIDTH*j
 	    if ((map[j] >> 4*i) & 1) == 1
 	    {
@@ -126,10 +126,10 @@ pub unsafe fn draw_char(c: char)
 		*(addr as *mut u32) = BG_COLOR;
 	    }
 	    
-	    addr-= 4;
+	    addr+= 4;
 	    i += 1;
 	}
-	addr += 4*(i+SCREEN_WIDTH);
+	addr -= 4*(i+SCREEN_WIDTH);
 	i = 0;
 	j += 1;
     }
