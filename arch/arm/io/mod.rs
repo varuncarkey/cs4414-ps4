@@ -125,11 +125,12 @@ pub unsafe fn draw_char(c: char)
 	    {
 		*(addr as *mut u32) = BG_COLOR;
 	    }
-	    
-	    addr+= 4;
+	    addr-=4;
+	    //addr+= 4;//This is upside down
 	    i += 1;
 	}
-	addr -= 4*(i+SCREEN_WIDTH);
+	addr += 4*(i+SCREEN_WIDTH);
+	//addr -= 4*(i+SCREEN_WIDTH);//upside down code
 	i = 0;
 	j += 1;
     }
