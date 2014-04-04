@@ -92,7 +92,8 @@ pub unsafe fn parsekey(x: char) {
 	    if io::CURSOR_X < io::SCREEN_WIDTH-io::CURSOR_WIDTH {
 		if(buffer.add_char(x)){		
 		putchar(x as char);
-		drawchar(x as char);}
+		drawchar(x as char);	
+		}
 		
 		//Store to Array of chars
 
@@ -146,19 +147,30 @@ fn screen() {
 }
 
 unsafe fn prompt(startup: bool){
+	//putstr(&"\nsgash > ");
+	//if !startup {drawstr(&"\nsgash > ");
+	let mut x=0;
+	if(buffer.len()!=0)
+	{
+	putstr(&"\n"); 
+	drawstr(&"\n");
+	}	
+	while x < buffer.len()
+	{
+		
+	//drawchar('g'); //test to see if working
+	let bufferp=*(((buffer.p as uint)+x) as *mut char);	
+	//let mut bufferp: char = ((*buffer.p as uint) + x) as char; 
+	//putchar(*(bufferp as *char));
+	drawchar(bufferp);
+	//drawchar((bufferp) as char);//GET THIS TO Work	
+	x+=1;	
+	}
+	buffer.reset();	
 	putstr(&"\nsgash > ");
 	if !startup {drawstr(&"\nsgash > ");
-	let mut x=0;	
-	while x < buffer.len()
-	{	
-	  x+=1;
-	drawchar('g'); 
-	let mut bufferp: uint = buffer.p as uint; 
-	//drawchar(*(bufferp as *char));//GET THIS TO Work
-		
-	}	
-	buffer.reset();	
 	}
+	
 }
 
 pub unsafe fn init() {
@@ -166,7 +178,7 @@ pub unsafe fn init() {
 	screen();
 	prompt(true);
 }
-
+//CREATED THE C STRING HERE
 struct cstr {
 	p: *mut u8,
 	p_cstr_i: uint,
