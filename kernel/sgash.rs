@@ -13,6 +13,8 @@ pub static mut buffer: cstr = cstr {
 				p_cstr_i: 0,
 				max: 0
 			      };
+
+
 pub fn putchar(key: char) {
     unsafe {
 	/*
@@ -145,27 +147,52 @@ fn screen() {
     putstr(&"\n| | |  | |_| | | | |  | |  \\ \\| ____| |   | | | | ____| | ");
     putstr(&"\n|_|_|  \\____/|_| |_|  |_|   \\_\\_____)_|   |_| |_|_____)__)\n\n");
 }
-
-unsafe fn prompt(startup: bool){
-	//putstr(&"\nsgash > ");
-	//if !startup {drawstr(&"\nsgash > ");
-	let mut x=0;
-	if(buffer.len()!=0)
-	{
-	putstr(&"\n"); 
-	drawstr(&"\n");
-	}	
-	while x < buffer.len()
+unsafe fn echo()
+{
+ let mut x=5;
+//drawchar('t');
+ while x < buffer.len()
 	{
 		
 	//drawchar('g'); //test to see if working
 	let bufferp=*(((buffer.p as uint)+x) as *mut char);	
 	//let mut bufferp: char = ((*buffer.p as uint) + x) as char; 
 	//putchar(*(bufferp as *char));
+	putchar(bufferp);
 	drawchar(bufferp);
 	//drawchar((bufferp) as char);//GET THIS TO Work	
 	x+=1;	
 	}
+}
+
+unsafe fn prompt(startup: bool){
+	//putstr(&"\nsgash > ");
+	//if !startup {drawstr(&"\nsgash > ");
+	if(buffer.len()!=0)
+	{
+	putstr(&"\n"); 
+	drawstr(&"\n");
+	if(buffer.matchStr(&"echo "))
+	{echo();}
+	else if(buffer.matchStr(&"ls "))
+	{ drawstr("\nTHIS ls COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"cat "))
+	{ drawstr("\nTHIS cat COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"cd "))
+	{ drawstr("\nTHIS cd COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"rm "))
+	{ drawstr("\nTHIS rm COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"mkdir "))
+	{ drawstr("\nTHIS mkdir COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"pwd "))
+	{ drawstr("\nTHIS pwd COMMAND DOES NOT CURRENTLY WORK\n");}
+	else if(buffer.matchStr(&"wr "))
+	{ drawstr("\nTHIS wr COMMAND DOES NOT CURRENTLY WORK\n");}
+	}
+	//After printing it out we gotta determine if its a command
+	//if it is send it to another function to handle it.
+	//else dont clear buffer and go on.
+
 	buffer.reset();	
 	putstr(&"\nsgash > ");
 	if !startup {drawstr(&"\nsgash > ");
@@ -174,7 +201,9 @@ unsafe fn prompt(startup: bool){
 }
 
 pub unsafe fn init() {
- 	buffer = cstr::new(256);    
+ 	buffer = cstr::new(256);
+	//drawchar((((*echoComm.p as uint) + 0) as u8) as char);
+	//drawchar((((*echoComm.p as uint) + 1) as u8) as char);    
 	screen();
 	prompt(true);
 }
@@ -276,7 +305,32 @@ impl cstr {
 			}
 		}
 	}
-
+	unsafe fn matchStr(&self, string: &str) -> bool
+	{
+		let mut x =0;
+		let mut matched=true;
+		let mut selfp: uint = self.p as uint;
+		//drawstr("\nget\n");		
+		for c in slice::iter(as_bytes(string)) {
+			 
+			if(x<self.len()){
+	  		if(*(((self.p as uint)+x) as *mut char) as u8!=(*c as char)as u8)		  
+			{
+			//drawstr("\n");			
+			drawchar(*c as char);
+			//drawstr("\n"); 
+			drawchar(*(((self.p as uint)+x) as *mut char)); 
+			drawstr("\n"); 			
+			matched=false;
+			break;}		
+			x+=1;
+			}
+			else
+			{matched=false;}
+		}
+		return matched;
+		
+	} 
 #[allow(dead_code)]
 	unsafe fn split(&self, delim: char) -> (cstr, cstr) {
 		let mut selfp: uint = self.p as uint;
@@ -298,7 +352,37 @@ impl cstr {
 			};
 			selfp += 1;
 		}
-	}
+	}	
+	/*unsafe fn split(&self, delim: char) -> (cstr, cstr) {
+		let mut selfp: uint = self.p as uint;
+		
+		let mut beg = cstr::new(256);
+		let mut end = cstr::new(256);
+		let mut found = false;
+		let mut x=0;
+		loop {
+			let current =(*(((self.p as uint)+x) as * mut char));
+			//drawchar(current);			
+			if (x==self.len()) {	
+				return (beg, end);
+			}
+			else if (found) {
+				//drawchar(current);
+				end.add_char(current as u8);
+			}			
+			else if (current==delim) {
+				//drawchar('g');
+				found = true;
+			}
+			else if (!found) {
+				//drawchar(current);
+				beg.add_char(current as u8);
+					
+			}
+			;
+			x += 1;
+		}
+	}*/
 
 }
 
