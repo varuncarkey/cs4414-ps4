@@ -73,6 +73,7 @@ pub unsafe fn parsekey(x: char) {
     //let string:~[char]=~[];
     // Set this to false to learn the keycodes of various keys!
     // Key codes are printed backwards because life is hard
+//keycode(x);
     match x { 
 	13		=>	{ 
 	    //putstr(&"\n");
@@ -88,8 +89,34 @@ pub unsafe fn parsekey(x: char) {
 		    putchar(''); 
 		    backspace();
 	    }
-	    //if size is not 0 delete from array of chars(for string)
 	}
+
+	    //if size is not 0 delete from array of chars(for string)
+	27		=>	{
+}
+
+
+/*match ((x%10)%10){
+	91 => {drawchar('y')}
+	_ => {drawchar((((x%10)%10) +0 )as char);}
+*/
+//drawchar('L');
+//drawchar('E');
+//drawchar('F');
+//drawchar('T');
+
+
+
+	   /* putchar((x%10) as char);
+	    putchar((x%10)  as char);
+putchar((x%10) as char);
+putchar((x%10) as char);
+
+}
+*/
+ 	//68 		=>	{
+	//    drawchar('L');
+//}
 	_		=>	{ 
 	    if io::CURSOR_X < io::SCREEN_WIDTH-io::CURSOR_WIDTH {
 		if(buffer.add_char(x)){		
@@ -102,6 +129,15 @@ pub unsafe fn parsekey(x: char) {
 	    }
 	}
     }
+}
+
+fn keycode(x: u8) {
+   let mut x = x;
+   while x != 0 {
+       putchar((x%10+ ('0' as u8)) as char);
+       x= x/10;
+   }
+   putchar(' ');
 }
 
 fn screen() {
@@ -326,13 +362,15 @@ impl cstr {
 	  		if(*(((self.p as uint)+x) as *mut char) as u8!=(*c as char)as u8)		  
 			{
 			//drawstr("\n");			
-			drawchar(*c as char);
+			//drawchar(*c as char);
 			//drawstr("\n"); 
-			drawchar(*(((self.p as uint)+x) as *mut char)); 
-			drawstr("\n"); 			
+			//drawchar(*(((self.p as uint)+x) as *mut char)); 
+			//drawstr("\n"); 			
 			matched=false;
-			break;}		
+			break;
+			}		
 			x+=1;
+			//drawstr("\n\n\n");
 			}
 			else
 			{matched=false;}
@@ -362,6 +400,7 @@ impl cstr {
 			selfp += 1;
 		}
 	}	
+
 	/*unsafe fn split(&self, delim: char) -> (cstr, cstr) {
 		let mut selfp: uint = self.p as uint;
 		
@@ -393,7 +432,31 @@ impl cstr {
 		}
 	}*/
 
+
+
+
 }
 
+//ATTEMPT AT FILES
+/*
+struct Files {
+	direc: bool,
+	contents: ~str,
+	tail: Option<Files>
+}
+
+impl Files
+{
+	pub unsafe fn addDirectory(File: Files, mut root: Files) -> Files
+	{
+	  root.tail=Some(File);
+	}
+	pub unsafe fn rmDirectory(File: Files, mut root: Files) -> Files
+	{
+	  root.tail=None;//assuming this is the directory or find it otherwise.
+	}
+
+
+}*/
 
 
