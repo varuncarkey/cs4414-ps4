@@ -199,7 +199,8 @@ unsafe fn pokecho()
 	let bufferp=*(((buffer.p as uint)+x) as *mut char);	
 	//let mut bufferp: char = ((*buffer.p as uint) + x) as char; 
 	//putchar(*(bufferp as *char));
-	putchar(bufferp);
+	//putstr("\n");
+	//putchar(bufferp);
 	drawchar(bufferp);
 	//drawchar((bufferp) as char);//GET THIS TO Work	
 	x+=1;	
@@ -305,7 +306,7 @@ else if(buffer.matchStr(&"Graveler") || buffer.matchStr(&"graveler"))
 	{ drawstr("\n Golem");}
 else if(buffer.matchStr(&"Ponyta") || buffer.matchStr(&"ponyta"))
 	{ drawstr("\n Rapidash");}
-else if(buffer.matchStr(&"Slowpoke") || buffer.matchStr(&"Slowpoke"))
+else if(buffer.matchStr(&"Slowpoke") || buffer.matchStr(&"slowpoke"))
 	{ drawstr("\n Slowbro");}
 
 
@@ -358,7 +359,7 @@ else if(buffer.matchStr(&"Horsea") || buffer.matchStr(&"horsea"))
 else if(buffer.matchStr(&"Goldeen") || buffer.matchStr(&"goldeen"))
 	{ drawstr("\n Seaking");}
 else if(buffer.matchStr(&"Staryu") || buffer.matchStr(&"staryu"))
-	{ pokecho();}
+	{ drawstr("\n Starmie");}
 else if(buffer.matchStr(&"Starmie") || buffer.matchStr(&"starmie"))
 	{ pokecho();}
 else if(buffer.matchStr(&"Mr. Mime") || buffer.matchStr(&"mr. mime"))
@@ -407,16 +408,10 @@ else if(buffer.matchStr(&"Mewtwo") || buffer.matchStr(&"mewtwo"))
 	{ pokecho();}
 else if(buffer.matchStr(&"Mew") || buffer.matchStr(&"mew"))
 	{ pokecho();}
-else {pokecho();}
-
-
-
-
-
-
+//else {pokecho();}
 	putstr(&"\n"); 
 	drawstr(&"\n");
-	if(buffer.matchStr(&"echo "))
+ 	if(buffer.matchStr(&"echo "))
 	{echo();}
 	else if(buffer.matchStr(&"ls "))
 	{ drawstr("\nTHIS ls COMMAND DOES NOT CURRENTLY WORK\n");}
@@ -432,6 +427,7 @@ else {pokecho();}
 	{ drawstr("\nTHIS pwd COMMAND DOES NOT CURRENTLY WORK\n");}
 	else if(buffer.matchStr(&"wr "))
 	{ drawstr("\nTHIS wr COMMAND DOES NOT CURRENTLY WORK\n");}
+else {pokecho();}
 	}
 
 	

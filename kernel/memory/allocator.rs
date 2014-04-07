@@ -174,6 +174,11 @@ impl BuddyAlloc {
         loop {
             match self.tree.get(index) {
                 UNUSED => {
+//The problem here is when both left AND right child have been cleared previously, 
+//the parent child should also  be set as "UNUSED", but the program 			    
+//fails to do so thus resulting in a situation where the parent is never "Freed" 
+//no matter what despite the fact it is unused, because it is 	            
+//accidentally labed as Full/split. 
 		let mut parent = index/2;
 		let mut leftc = index * 2 + 1;
 		let mut rightc = index * 2 + 2;
@@ -188,7 +193,7 @@ impl BuddyAlloc {
 		},
                 USED => self.tree.set(index, UNUSED),
                 _ => {
-		    //The problem here is when both left AND right child have been cleared previously, the parent child should also  be set as "UNUSED", but the program 			    //fails to do so thus resulting in a situation where the parent is never "Freed" no matter what despite the fact it is unused, because it is 	             //accidentally labed as Full/split. 
+		    
 
                     length /= 2;
                     if offset < left + length {

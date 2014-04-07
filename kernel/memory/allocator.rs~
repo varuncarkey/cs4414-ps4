@@ -181,7 +181,7 @@ impl BuddyAlloc {
                 (UNUSED, UNUSED) => {
 			self.tree.set(parent, UNUSED);
 			}
-		_,_ => return;	
+		(_, _) => return	
 		}
 		return;
 
