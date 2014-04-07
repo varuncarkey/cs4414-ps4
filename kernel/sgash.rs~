@@ -317,13 +317,15 @@ impl cstr {
 	  		if(*(((self.p as uint)+x) as *mut char) as u8!=(*c as char)as u8)		  
 			{
 			//drawstr("\n");			
-			drawchar(*c as char);
+			//drawchar(*c as char);
 			//drawstr("\n"); 
-			drawchar(*(((self.p as uint)+x) as *mut char)); 
-			drawstr("\n"); 			
+			//drawchar(*(((self.p as uint)+x) as *mut char)); 
+			//drawstr("\n"); 			
 			matched=false;
-			break;}		
+			break;
+			}		
 			x+=1;
+			//drawstr("\n\n\n");
 			}
 			else
 			{matched=false;}
