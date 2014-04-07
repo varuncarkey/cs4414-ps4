@@ -105,47 +105,34 @@ pub unsafe fn parsekey(x: char) {
 }
 
 fn screen() {
-    putstr(&"\n                                                               "); 
-    putstr(&"\n                                                               ");
-    putstr(&"\n                       7=..~$=..:7                             "); 
-    putstr(&"\n                  +$: =$$$+$$$?$$$+ ,7?                        "); 
-    putstr(&"\n                  $$$$$$$$$$$$$$$$$$Z$$                        ");
-    putstr(&"\n              7$$$$$$$$$$$$. .Z$$$$$Z$$$$$$                    ");
-    putstr(&"\n           ~..7$$Z$$$$$7+7$+.?Z7=7$$Z$$Z$$$..:                 ");
-    putstr(&"\n          ~$$$$$$$$7:     :ZZZ,     :7ZZZZ$$$$=                ");
-    putstr(&"\n           Z$$$$$?                    .+ZZZZ$$                 ");
-    putstr(&"\n       +$ZZ$$$Z7                         7ZZZ$Z$$I.            "); 
-    putstr(&"\n        $$$$ZZZZZZZZZZZZZZZZZZZZZZZZI,    ,ZZZ$$Z              "); 
-    putstr(&"\n      :+$$$$ZZZZZZZZZZZZZZZZZZZZZZZZZZZ=    $ZZ$$+~,           "); 
-    putstr(&"\n     ?$Z$$$$ZZZZZZZZZZZZZZZZZZZZZZZZZZZZI   7ZZZ$ZZI           "); 
-    putstr(&"\n      =Z$$+7Z$$7ZZZZZZZZ$$$$$$$ZZZZZZZZZZ  ~Z$?$ZZ?            ");	 
-    putstr(&"\n    :$Z$Z...$Z  $ZZZZZZZ~       ~ZZZZZZZZ,.ZZ...Z$Z$~          "); 
-    putstr(&"\n    7ZZZZZI$ZZ  $ZZZZZZZ~       =ZZZZZZZ7..ZZ$?$ZZZZ$          "); 
-    putstr(&"\n      ZZZZ$:    $ZZZZZZZZZZZZZZZZZZZZZZ=     ~$ZZZ$:           "); 
-    putstr(&"\n    7Z$ZZ$,     $ZZZZZZZZZZZZZZZZZZZZ7         ZZZ$Z$          "); 
-    putstr(&"\n   =ZZZZZZ,     $ZZZZZZZZZZZZZZZZZZZZZZ,       ZZZ$ZZ+         "); 
-    putstr(&"\n     ,ZZZZ,     $ZZZZZZZ:     =ZZZZZZZZZ     ZZZZZ$:           "); 
-    putstr(&"\n    =$ZZZZ+     ZZZZZZZZ~       ZZZZZZZZ~   =ZZZZZZZI          "); 
-    putstr(&"\n    $ZZ$ZZZ$$Z$$ZZZZZZZZZ$$$$   IZZZZZZZZZ$ZZZZZZZZZ$          "); 
-    putstr(&"\n      :ZZZZZZZZZZZZZZZZZZZZZZ   ~ZZZZZZZZZZZZZZZZZ~            "); 
-    putstr(&"\n     ,Z$$ZZZZZZZZZZZZZZZZZZZZ    ZZZZZZZZZZZZZZZZZZ~           "); 
-    putstr(&"\n     =$ZZZZZZZZZZZZZZZZZZZZZZ     $ZZZZZZZZZZZZZZZ$+           "); 
-    putstr(&"\n        IZZZZZ:.                        . ,ZZZZZ$              "); 
-    putstr(&"\n       ~$ZZZZZZZZZZZ                 ZZZZ$ZZZZZZZ+             "); 
-    putstr(&"\n           Z$ZZZ. ,Z~               =Z:.,ZZZ$Z                 "); 
-    putstr(&"\n          ,ZZZZZ..~Z$.             .7Z:..ZZZZZ:                ");
-    putstr(&"\n          ~7+:$ZZZZZZZZI=:.   .,=IZZZZZZZ$Z:=7=                ");
-    putstr(&"\n              $$ZZZZZZZZZZZZZZZZZZZZZZ$ZZZZ                    ");
-    putstr(&"\n              ==..$ZZZ$ZZZZZZZZZZZ$ZZZZ .~+                    ");
-    putstr(&"\n                  I$?.?ZZZ$ZZZ$ZZZI =$7                        ");
-    putstr(&"\n                       $7..I$7..I$,                            ");
-    putstr(&"\n"); 
-    putstr(&"\n _                     _     _                         _  ");
-    putstr(&"\n| |                   (_)   | |                       | | ");
-    putstr(&"\n| | ____ ___  ____     _____| |_____  ____ ____  _____| | ");
-    putstr(&"\n| |/ ___) _ \\|  _ \\   |  _   _) ___ |/ ___)  _ \\| ___ | | ");
-    putstr(&"\n| | |  | |_| | | | |  | |  \\ \\| ____| |   | | | | ____| | ");
-    putstr(&"\n|_|_|  \\____/|_| |_|  |_|   \\_\\_____)_|   |_| |_|_____)__)\n\n");
+
+   putstr(&"\n  .__                           __.                  "); 
+   putstr(&"\n    \\ `\\~~---..---~~~~~~--.---~~| /                  "); 
+   putstr(&"\n     `~-.   `                   .~         _____     "); 
+   putstr(&"\n         ~.                .--~~    .---~~~    /     "); 
+   putstr(&"\n          / .-.      .-.      |  <~~        __/      "); 
+   putstr(&"\n         |  |_|      |_|       \\  \\     .--'         "); 
+   putstr(&"\n        /-.      -       .-.    |  \\_   \\_           "); 
+   putstr(&"\n        \\-'   -..-..-    `-'    |    \\__  \\_         "); 
+   putstr(&"\n         `.                     |     _/  _/         "); 
+   putstr(&"\n           ~-                .,-\\   _/  _/           "); 
+   putstr(&"\n          /                 -~~~~\\ /_  /_            "); 
+   putstr(&"\n         |               /   |    \\  \\_  \\_          "); 
+   putstr(&"\n         |   /          /   /      | _/  _/          "); 
+   putstr(&"\n         |  |          |   /    .,-|/  _/            "); 
+   putstr(&"\n         )__/           \\_/    -~~~| _/              "); 
+   putstr(&"\n           \\                      /  \\               "); 
+   putstr(&"\n            |           |        /_---`              "); 
+   putstr(&"\n            \\    .______|      ./                    "); 
+   putstr(&"\n            (   /        \\    /                      "); 
+   putstr(&"\n            `--'          /__/                       "); 
+   putstr(&"\n   ________   ____  _    __        _     ___    _    ");
+   putstr(&"\n   \\       \\  \\_  |/ \\  /_/   __  / |   /_  \\  | |   ");
+   putstr(&"\n    \\_  \\_  \\ __\\    /  ___  |  \\/  | ___ |  \\ | |   ");
+   putstr(&"\n      \\   __//  \\|   \\ / |_\\ |      |/   \\|   \\| |   ");
+   putstr(&"\n       \\  \\ | |_ |    \\\\  --|| |\\/| |  |_ | |\\   |   ");
+   putstr(&"\n        \\__\\ \\__/|_|\\__|\\__/ |_|  |_|\\___/|_| |__|   ");
+
 }
 unsafe fn echo()
 {
@@ -165,11 +152,232 @@ unsafe fn echo()
 	}
 }
 
+unsafe fn pokecho()
+{
+ let mut x=0;
+//drawchar('t');
+ while x < buffer.len()
+	{
+		
+	//drawchar('g'); //test to see if working
+	let bufferp=*(((buffer.p as uint)+x) as *mut char);	
+	//let mut bufferp: char = ((*buffer.p as uint) + x) as char; 
+	//putchar(*(bufferp as *char));
+	putchar(bufferp);
+	drawchar(bufferp);
+	//drawchar((bufferp) as char);//GET THIS TO Work	
+	x+=1;	
+	}
+}
+
 unsafe fn prompt(startup: bool){
 	//putstr(&"\nsgash > ");
 	//if !startup {drawstr(&"\nsgash > ");
+
 	if(buffer.len()!=0)
 	{
+	if(buffer.matchStr(&"bulbasaur") || buffer.matchStr(&"Bulbasaur"))
+	{ drawstr("\n Ivysaur");}
+else if(buffer.matchStr(&"Ivysaur") || buffer.matchStr(&"ivysaur"))
+	{ drawstr("\n Venusaur");}
+else if(buffer.matchStr(&"Charmander") || buffer.matchStr(&"charmander"))
+	{ drawstr("\n Charmeleon");}
+else if(buffer.matchStr(&"Charmeleon") || buffer.matchStr(&"charmeleon"))
+	{ drawstr("\n Charizard");}
+else if(buffer.matchStr(&"Squirtle") || buffer.matchStr(&"squirtle"))
+	{ drawstr("\n Wartortle");}
+else if(buffer.matchStr(&"Wartortle") || buffer.matchStr(&"wartortle"))
+	{ drawstr("\n Blastoise");}
+else if(buffer.matchStr(&"Caterpie") || buffer.matchStr(&"caterpie"))
+	{ drawstr("\n Metapod");}
+else if(buffer.matchStr(&"Metapod") || buffer.matchStr(&"metapod"))
+	{ drawstr("\n Butterfree");}
+else if(buffer.matchStr(&"Weedle") || buffer.matchStr(&"weedle"))
+	{ drawstr("\n Kakuna");}
+else if(buffer.matchStr(&"Kakuna") || buffer.matchStr(&"kakuna"))
+	{ drawstr("\n Beedrill");}
+else if(buffer.matchStr(&"Pidgey") || buffer.matchStr(&"pidgey"))
+	{ drawstr("\n Pidgeotto");}
+else if(buffer.matchStr(&"Pidgeotto") || buffer.matchStr(&"pidgeotto"))
+	{ drawstr("\n Pidgeot");}
+	else if(buffer.matchStr(&"Rattata") || buffer.matchStr(&"rattata"))
+	{ drawstr("\n Raticate");}
+
+
+else if(buffer.matchStr(&"Spearow") || buffer.matchStr(&"spearow"))
+	{ drawstr("\n Fearow");}
+else if(buffer.matchStr(&"Ekans") || buffer.matchStr(&"ekans"))
+	{ drawstr("\n Arbok");}
+else if(buffer.matchStr(&"Pikachu") || buffer.matchStr(&"pikachu"))
+	{ drawstr("\n Raichu");}
+
+else if(buffer.matchStr(&"Sandshrew") || buffer.matchStr(&"sandshrew"))
+	{ drawstr("\n Sandslash");}
+else if(buffer.matchStr(&"Nidoran") || buffer.matchStr(&"nidoran"))
+	{ drawstr("\n Nidorina/Nidorino");}
+else if(buffer.matchStr(&"Nidorina") || buffer.matchStr(&"nidorina"))
+	{ drawstr("\n Nidoqueen");}
+else if(buffer.matchStr(&"Nidorino") || buffer.matchStr(&"nidorino"))
+	{ drawstr("\n Nidoking");}
+else if(buffer.matchStr(&"Clefairy") || buffer.matchStr(&"clefairy"))
+	{ drawstr("\n Clefable");}
+else if(buffer.matchStr(&"Vulpix") || buffer.matchStr(&"vulpix"))
+	{ drawstr("\n Ninetales");}
+else if(buffer.matchStr(&"Jigglypuff") || buffer.matchStr(&"jigglypuff"))
+	{ drawstr("\n Wigglytuff");}
+else if(buffer.matchStr(&"Zubat") || buffer.matchStr(&"zubat"))
+	{ drawstr("\n Golbat");}
+else if(buffer.matchStr(&"Oddish") || buffer.matchStr(&"oddish"))
+	{ drawstr("\n Gloom");}
+else if(buffer.matchStr(&"Gloom") || buffer.matchStr(&"gloom"))
+	{ drawstr("\n Vileplume");}
+else if(buffer.matchStr(&"Paras") || buffer.matchStr(&"paras"))
+	{ drawstr("\n Parasect");}
+else if(buffer.matchStr(&"Venonat") || buffer.matchStr(&"venonat"))
+	{ drawstr("\n Venomoth");}
+else if(buffer.matchStr(&"Diglett") || buffer.matchStr(&"diglett"))
+	{ drawstr("\n Dugtrio");}
+else if(buffer.matchStr(&"Meowth") || buffer.matchStr(&"meowth"))
+	{ drawstr("\n Persian");}
+else if(buffer.matchStr(&"Psyduck") || buffer.matchStr(&"psyduck"))
+	{ drawstr("\n Golduck");}
+else if(buffer.matchStr(&"Mankey") || buffer.matchStr(&"mankey"))
+	{ drawstr("\n Primeape");}
+else if(buffer.matchStr(&"Growlithe") || buffer.matchStr(&"growlithe"))
+	{ drawstr("\n Arcanine");}
+else if(buffer.matchStr(&"Poliwag") || buffer.matchStr(&"poliwag"))
+	{ drawstr("\n Poliwhirl");}
+else if(buffer.matchStr(&"Poliwhirl") || buffer.matchStr(&"poliwhirl"))
+	{ drawstr("\n Poliwrath");}
+else if(buffer.matchStr(&"Abra") || buffer.matchStr(&"abra"))
+	{ drawstr("\n Kadabra");}
+else if(buffer.matchStr(&"Kadabra") || buffer.matchStr(&"kadabra"))
+	{ drawstr("\n Alakazam");}
+else if(buffer.matchStr(&"Machop") || buffer.matchStr(&"machop"))
+	{ drawstr("\n Machoke");}
+else if(buffer.matchStr(&"Machoke") || buffer.matchStr(&"machoke"))
+	{ drawstr("\n Machamp");}
+else if(buffer.matchStr(&"Bellsprout") || buffer.matchStr(&"bellsprout"))
+	{ drawstr("\n Weepinbell");}
+else if(buffer.matchStr(&"Weepinbell") || buffer.matchStr(&"weepinbell"))
+	{ drawstr("\n Victreebel");}
+else if(buffer.matchStr(&"Tentacool") || buffer.matchStr(&"tentacool"))
+	{ drawstr("\n Tentacruel");}
+else if(buffer.matchStr(&"Geodude") || buffer.matchStr(&"geodude"))
+	{ drawstr("\n Graveler");}
+else if(buffer.matchStr(&"Graveler") || buffer.matchStr(&"graveler"))
+	{ drawstr("\n Golem");}
+else if(buffer.matchStr(&"Ponyta") || buffer.matchStr(&"ponyta"))
+	{ drawstr("\n Rapidash");}
+else if(buffer.matchStr(&"Slowpoke") || buffer.matchStr(&"Slowpoke"))
+	{ drawstr("\n Slowbro");}
+
+
+else if(buffer.matchStr(&"Slowbro") || buffer.matchStr(&"slowbro"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Magnemite") || buffer.matchStr(&"magnemite"))
+	{ drawstr("\n Magneton");}
+else if(buffer.matchStr(&"Farfetch'd") || buffer.matchStr(&"farfetch'd"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Doduo") || buffer.matchStr(&"doduo"))
+	{ drawstr("\n Dodrio");}
+else if(buffer.matchStr(&"Seel") || buffer.matchStr(&"seel"))
+	{ drawstr("\n Dewgong");}
+else if(buffer.matchStr(&"Grimer") || buffer.matchStr(&"grimer"))
+	{ drawstr("\n Muk");}
+else if(buffer.matchStr(&"Shellder") || buffer.matchStr(&"shellder"))
+	{ drawstr("\n Cloyster");}
+else if(buffer.matchStr(&"Gastly") || buffer.matchStr(&"gastly"))
+	{ drawstr("\n Haunter");}
+else if(buffer.matchStr(&"Haunter") || buffer.matchStr(&"haunter"))
+	{ drawstr("\n Gengar");}
+else if(buffer.matchStr(&"Onix") || buffer.matchStr(&"onix"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Drowzee") || buffer.matchStr(&"drowzee"))
+	{ drawstr("\n Hypno");}
+else if(buffer.matchStr(&"Krabby") || buffer.matchStr(&"krabby"))
+	{ drawstr("\n Kingler");}
+else if(buffer.matchStr(&"Voltorb") || buffer.matchStr(&"voltorb"))
+	{ drawstr("\n Electrode");}
+else if(buffer.matchStr(&"Exeggcute") || buffer.matchStr(&"exeggcute"))
+	{ drawstr("\n Exeggutor");}
+else if(buffer.matchStr(&"Cubone") || buffer.matchStr(&"cubone"))
+	{ drawstr("\n Marowak");}
+else if(buffer.matchStr(&"Hitmonlee") || buffer.matchStr(&"hitmonlee"))
+	{ drawstr("\n Hitmonchan");}
+else if(buffer.matchStr(&"Lickitung") || buffer.matchStr(&"lickitung"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Koffing") || buffer.matchStr(&"koffing"))
+	{ drawstr("\n Weezing");}
+else if(buffer.matchStr(&"Rhyhorn") || buffer.matchStr(&"rhyhorn"))
+	{ drawstr("\n Rhydon");}
+else if(buffer.matchStr(&"Chansey") || buffer.matchStr(&"chansey"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Tangela") || buffer.matchStr(&"tangela"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Kangaskhan") || buffer.matchStr(&"kangaskhan"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Horsea") || buffer.matchStr(&"horsea"))
+	{ drawstr("\n Seadra");}
+else if(buffer.matchStr(&"Goldeen") || buffer.matchStr(&"goldeen"))
+	{ drawstr("\n Seaking");}
+else if(buffer.matchStr(&"Staryu") || buffer.matchStr(&"staryu"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Starmie") || buffer.matchStr(&"starmie"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Mr. Mime") || buffer.matchStr(&"mr. mime"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Scyther") || buffer.matchStr(&"scyther"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Jynx") || buffer.matchStr(&"jynx"))
+	{ pokecho();}
+else if(buffer.matchStr(&"electabuzz") || buffer.matchStr(&"Electabuzz"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Magmar") || buffer.matchStr(&"magmar"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Pinsir") || buffer.matchStr(&"pinsir"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Tauros") || buffer.matchStr(&"tauros"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Magikarp") || buffer.matchStr(&"magikarp"))
+	{ drawstr("\n Gyarados");}
+else if(buffer.matchStr(&"Lapras") || buffer.matchStr(&"lapras"))
+	{ pokecho();}
+else if(buffer.matchStr(&"ditto") || buffer.matchStr(&"Ditto"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Eevee") || buffer.matchStr(&"eevee"))
+	{ drawstr("\n Vaporeon/Jolteon/Flareon");}
+else if(buffer.matchStr(&"Porygon") || buffer.matchStr(&"porygon"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Omanyte") || buffer.matchStr(&"omanyte"))
+	{ drawstr("\n Omastar");}
+else if(buffer.matchStr(&"Kabuto") || buffer.matchStr(&"kabuto"))
+	{ drawstr("\n Kabutops");}
+else if(buffer.matchStr(&"Aerodactyl") || buffer.matchStr(&"aerodactyl"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Snorlax") || buffer.matchStr(&"snorlax"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Articuno") || buffer.matchStr(&"articuno"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Zapdos") || buffer.matchStr(&"zapdos"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Moltres") || buffer.matchStr(&"moltres"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Dratini") || buffer.matchStr(&"dratini"))
+	{ drawstr("\n Dragonair");}
+else if(buffer.matchStr(&"Dragonair") || buffer.matchStr(&"dragonair"))
+	{ drawstr("\n Dragonite");}
+else if(buffer.matchStr(&"Mewtwo") || buffer.matchStr(&"mewtwo"))
+	{ pokecho();}
+else if(buffer.matchStr(&"Mew") || buffer.matchStr(&"mew"))
+	{ pokecho();}
+else {pokecho();}
+
+
+
+
+
+
 	putstr(&"\n"); 
 	drawstr(&"\n");
 	if(buffer.matchStr(&"echo "))
@@ -189,6 +397,8 @@ unsafe fn prompt(startup: bool){
 	else if(buffer.matchStr(&"wr "))
 	{ drawstr("\nTHIS wr COMMAND DOES NOT CURRENTLY WORK\n");}
 	}
+
+	
 	//After printing it out we gotta determine if its a command
 	//if it is send it to another function to handle it.
 	//else dont clear buffer and go on.
